@@ -21,5 +21,15 @@ ORDER BY DESC(?sales)
 LIMIT 100</code></pre>
 
 <iframe src="https://query.wikidata.org/embed.html#%23defaultView%3ABubbleChart%0ASELECT%20%3FalbumLabel%20%3Fsales%20WHERE%20%7B%0A%20%20%3Falbum%20wdt%3AP31%20wd%3AQ482994%3B%0A%20%20%20%20%20%20%20%20%20wdt%3AP2664%20%3Fsales.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cfr%2Cen%22.%20%7D%0A%7D%0AORDER%20BY%20DESC%28%3Fsales%29%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+<style>
+    iframe {
+            width: 100%;
+            height: 600px; /* C'est cette ligne qui agrandit le graphique ! */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+</style>
+
 </body>
 </html>
