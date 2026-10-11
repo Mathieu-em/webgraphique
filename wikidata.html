@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Exercice Wikidata - Top 100 des albums les plus vendus</h1>
+    <h2>Thème : Les albums de musique les plus vendus au monde</h2>
+    <h3>Code SPARQL de la requête :</h3>
+
+    
+    <pre><code>#defaultView:BubbleChart
+SELECT ?albumLabel ?sales WHERE {
+  ?album wdt:P31 wd:Q482994;           # C'est un album de musique
+         wdt:P2664 ?sales.             # Possède la propriété "unités vendues"
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr,en". }
+}
+ORDER BY DESC(?sales)               
+LIMIT 100</code></pre>
+
+<iframe src="https://query.wikidata.org/embed.html#%23defaultView%3ABubbleChart%0ASELECT%20%3FalbumLabel%20%3Fsales%20WHERE%20%7B%0A%20%20%3Falbum%20wdt%3AP31%20wd%3AQ482994%3B%0A%20%20%20%20%20%20%20%20%20wdt%3AP2664%20%3Fsales.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cfr%2Cen%22.%20%7D%0A%7D%0AORDER%20BY%20DESC%28%3Fsales%29%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+</body>
+</html>
