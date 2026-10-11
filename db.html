@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <h1>Design de base de données</h1>
+
+    <h2>1. Code DBML</h2>
+    <p>Ce code définit trois tables et leurs champs, ainsi que les relations (clés étrangères) qui les lient.</p>
+    
+    <pre><code>Table personnes {
+  nom_complet varchar
+  age int
+  nationalite varchar
+  photo blob
+}
+
+Table films {
+  titre varchar
+  annee int
+  realisateur varchar
+  genre varchar
+}
+
+Table statistiques {
+  film_titre varchar
+  box_office float
+  entrees_cinema int
+  note_spectateurs float
+}
+
+Ref: films.realisateur > personnes.nom_complet
+Ref: statistiques.film_titre > films.titre</code></pre>
+
+    <h2>Aperçu du schéma relationnel</h2>
+    <iframe width="560" height="315" src='https://dbdiagram.io/e/6acbddde50a8c6fc3625b4a4/6acbdde127cfb7f1bcd7b274'> </iframe>
+
+</body>
+</html>
